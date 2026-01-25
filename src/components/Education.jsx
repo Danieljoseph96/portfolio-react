@@ -28,7 +28,7 @@ export default function Education() {
         <div className="edu-card">
           <div className="edu-front">
             <h3>Bachelor of Computer Science</h3>
-            <span>2021 – 2024</span>
+            <span> 2024</span>
             <p>IGNOU University</p>
           </div>
 
@@ -42,7 +42,7 @@ export default function Education() {
         <div className="edu-card">
           <div className="edu-front">
             <h3>Diploma in  Computer Software Engineering </h3>
-            <span>2021 – 2024</span>
+            <span>2018</span>
             <p> AICTE</p>
           </div>
 
@@ -58,7 +58,7 @@ export default function Education() {
         <div className="edu-card">
           <div className="edu-front">
             <h3>Higher Secondary (12th)</h3>
-            <span>2019 – 2021</span>
+            <span>2014</span>
             <p>State Board</p>
           </div>
 
@@ -72,7 +72,7 @@ export default function Education() {
         <div className="edu-card">
           <div className="edu-front">
             <h3>Secondary School (10th)</h3>
-            <span>2018 – 2019</span>
+            <span>2012</span>
             <p>State Board</p>
           </div>
 

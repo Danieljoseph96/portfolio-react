@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import {
-  FaMoon,
-  FaSun,
-  FaPalette,
-  FaBars,
-  FaTimes
-} from "react-icons/fa";
+import { FaMoon, FaSun, FaPalette, FaBars, FaTimes } from "react-icons/fa";
+import logoSvg from "../assets/logo.svg";
 
 export default function Navbar({ theme, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,19 +40,21 @@ export default function Navbar({ theme, toggleTheme }) {
   }, []);
 
   const links = [
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "certificates", label: "Certificates" },
-  { id: "education", label: "Education" },
-];
-
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "certificates", label: "Certificates" },
+    { id: "education", label: "Education" }
+  ];
 
   return (
     <nav className={`navbar navbar-${theme}`}>
-      <h2>Daniel Joseph ML</h2>
+      <div className="brand">
+        <img src={logoSvg} alt="Logo" className="logo" />
+        <h2>Daniel Joseph ML</h2>
+      </div>
 
-      {/* Hamburger (Mobile) */}
+      {/* Hamburger */}
       <button
         className="menu-btn"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -67,7 +64,7 @@ export default function Navbar({ theme, toggleTheme }) {
       </button>
 
       {/* Links */}
-      <ul className={menuOpen ? "nav-links open" : "nav-links"}>
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         {links.map(link => (
           <li key={link.id}>
             <a

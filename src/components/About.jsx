@@ -42,16 +42,16 @@ export default function About() {
           <a href="tel:+919876543210" title="Call me">
             <FaPhone />
           </a>
-          <a href="mailto:yourmail@gmail.com" title="Email">
+          <a href="mailto:mldaniel020@gmail.com" title="Email">
             <FaEnvelope />
           </a>
-          <a href="https://linkedin.com" target="_blank" title="LinkedIn" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/daniel-joseph-ml/" target="_blank" title="LinkedIn" rel="noreferrer">
             <FaLinkedin />
           </a>
-          <a href="https://github.com" target="_blank" title="GitHub" rel="noreferrer">
+          <a href="https://github.com/Danieljoseph96" target="_blank" title="GitHub" rel="noreferrer">
             <FaGithub />
           </a>
-          <a href="https://instagram.com" target="_blank" title="Instagram" rel="noreferrer">
+          <a href="https://www.instagram.com/danieljosephml/" target="_blank" title="Instagram" rel="noreferrer">
             <FaInstagram />
           </a>
         </div>

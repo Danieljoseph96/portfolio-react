@@ -14,47 +14,31 @@
   background: var(--bg);
   color: var(--text);
 
-  transition:
-    background 0.35s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-/* subtle shadow on scroll feel */
-.navbar {
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-/* ================= THEME VARIANTS ================= */
-/* (kept for flexibility, but variables do the work) */
-
-.navbar-light {
-  background: var(--bg);
-  color: var(--text);
-}
-
-.navbar-dark {
-  background: var(--bg);
-  color: var(--text);
-}
-
-.navbar-blue {
-  background: var(--bg);
-  color: var(--text);
+  transition: background 0.35s ease, color 0.25s ease;
 }
 
 /* ================= BRAND ================= */
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo {
+  height: 42px;
+}
+
 .navbar h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--primary);
-  letter-spacing: 0.4px;
 }
 
 /* ================= NAV LINKS ================= */
 
-.navbar ul {
+.nav-links {
   display: flex;
   list-style: none;
   gap: 1.8rem;
@@ -67,11 +51,8 @@
   text-decoration: none;
   font-weight: 500;
   opacity: 0.9;
-
-  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
-/* hover underline animation */
 .navbar a::after {
   content: "";
   position: absolute;
@@ -83,85 +64,41 @@
   transition: width 0.25s ease;
 }
 
-.navbar a:hover {
-  opacity: 1;
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
 }
 
-.navbar a:hover::after {
-  width: 100%;
+.navbar a.active {
+  color: var(--primary);
 }
 
 /* ================= THEME BUTTON ================= */
 
 .theme-btn {
-  background: transparent;
+  background: none;
   border: none;
-  color: var(--primary);
   font-size: 1.3rem;
+  color: var(--primary);
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-
-  transition:
-    transform 0.25s ease,
-    color 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .theme-btn:hover {
   transform: rotate(20deg) scale(1.1);
-  color: var(--text);
 }
 
-.theme-btn:active {
-  transform: scale(0.95);
-}
-
-/* ================= RESPONSIVE ================= */
-
-/* 📱 Mobile */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0 5%;
-  }
-
-  .navbar ul {
-    gap: 1.2rem;
-  }
-
-  .navbar h2 {
-    font-size: 1.1rem;
-  }
-}
-
-/* 🖥️ Large screens / TV */
-@media (min-width: 1600px) {
-  .navbar {
-    padding: 0 14%;
-  }
-}
-
-/* ================= Mobile Menu ================= */
+/* ================= MOBILE ================= */
 
 .menu-btn {
   display: none;
   background: none;
   border: none;
-  color: var(--primary);
   font-size: 1.5rem;
+  color: var(--primary);
   cursor: pointer;
 }
 
-/* Active link */
-.navbar a.active {
-  color: var(--primary);
-}
-
-.navbar a.active::after {
-  width: 100%;
-}
-
-/* Mobile */
 @media (max-width: 768px) {
   .menu-btn {
     display: block;
@@ -170,15 +107,12 @@
   .nav-links {
     position: absolute;
     top: 80px;
-    right: 0;
+    left: 0;
     width: 100%;
     background: var(--bg);
-
     flex-direction: column;
-    align-items: center;
     gap: 1.5rem;
     padding: 2rem 0;
-
     transform: translateY(-120%);
     transition: transform 0.35s ease;
   }
