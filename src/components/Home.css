@@ -1,0 +1,86 @@
+/* Hero */
+.hero {
+  min-height: 100vh;
+  background: var(--hero-bg);
+  color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  gap: 1.5rem;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.badge {
+  background: var(--card);
+  border: 1px solid var(--primary);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* TryHackMe iframe */
+.iframe-box {
+  width: 330px;
+  height: 90px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.iframe-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* CEH badge */
+.ceh-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  background: var(--card);
+  padding: 0.6rem;
+  border-radius: 14px;
+  text-align: center;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.ceh-box img {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.3rem;
+}
+
+.ceh-box span {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+  .ceh-box {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .iframe-box {
+    width: 280px;
+    height: 75px;
+  }
+}

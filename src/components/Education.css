@@ -1,0 +1,158 @@
+.education {
+  background: var(--education-bg);
+  color: var(--text);
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+.education h2 {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+/* Timeline */
+.edu-timeline {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 800px;
+}
+
+/* Card */
+.edu-card {
+  position: relative;
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Front */
+.edu-front {
+  padding: 1.5rem;
+}
+
+.edu-front h3 {
+  color: var(--primary);
+}
+
+.edu-front span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Hover overlay */
+.edu-hover {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.75); /* overlay only */
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.edu-card:hover .edu-hover {
+  opacity: 1;
+}
+
+.edu-hover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+.edu-hover p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: rgba(0,0,0,0.5);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+}
+
+/* ===== PHONE (default) ===== */
+
+.edu-timeline {
+  display: grid;
+  grid-template-columns: 1fr;   /* single column */
+  gap: 1.2rem;
+}
+
+.edu-card {
+  height: 170px;
+}
+@media (min-width: 768px) {
+  .edu-timeline {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    height: 190px;
+  }
+}
+@media (min-width: 1200px) {
+  .edu-timeline {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .edu-card {
+    height: 220px;
+  }
+}
+/* Phone */
+.hero h1 {
+  font-size: 2.2rem;
+}
+
+/* Laptop */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* TV */
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: 3.8rem;
+  }
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Laptop */
+@media (min-width: 768px) {
+  .badges {
+    gap: 0.8rem;
+  }
+}
+
+/* TV */
+@media (min-width: 1200px) {
+  .badges {
+    gap: 1rem;
+  }
+}

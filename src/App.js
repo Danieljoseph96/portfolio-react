@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Loader from "./components/Loader";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Certificates from "./components/Certificates";
+import Home from "./components/Home";
+import Education from "./components/Education";
+import WorkExperience from "./components/WorkExperience";
 
-function App() {
+export default function App() {
+  const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState("light");
+
+ const toggleTheme = () => {
+  setTheme(prev =>
+    prev === "light" ? "blue" : prev === "blue" ? "red" : "light"
+  );
+};
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={theme}>
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
+
+      <Home/>
+      <About />
+      <WorkExperience/>
+            <Certificates />
+      <Projects />
+
+      <Education/>
+      
     </div>
   );
 }
-
-export default App;

@@ -1,0 +1,27 @@
+/* loader.css */
+.loader-container {
+  position: fixed;
+  inset: 0;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid #334155;
+  border-top-color: #38bdf8;
+  animation: spinBounce 1s ease-in-out infinite;
+}
+
+@keyframes spinBounce {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg) scale(1.15); }
+  100% { transform: rotate(360deg); }
+}

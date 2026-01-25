@@ -1,0 +1,11 @@
+// Loader.jsx
+import "./loader.css";
+
+export default function Loader() {
+  return (
+    <div className="loader-container">
+      <div className="spinner"></div>
+      <h2>Loading...</h2>
+    </div>
+  );
+}

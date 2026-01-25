@@ -1,0 +1,27 @@
+.dark {
+  /* Base colors */
+  --bg: #020617;
+  --text: #e5e7eb;
+  --muted-text: #94a3b8;
+
+  /* Cards & borders */
+  --card: #0f172a;
+  --border: #1e293b;
+
+  /* Accent */
+  --primary: #38bdf8;
+  --primary-soft: rgba(56, 189, 248, 0.15);
+
+  /* Section backgrounds */
+  --hero-bg: linear-gradient(135deg, #020617, #020617);
+  --about-bg: #020617;
+  --projects-bg: #020617;
+  --certificates-bg: #020617;
+  --education-bg: #020617;
+  --experience-bg: #020617;
+    --cert-accent: #38bdf8;
+  --cert-glow: rgba(56, 189, 248, 0.25);
+
+  /* Effects */
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}

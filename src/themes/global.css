@@ -1,0 +1,38 @@
+/* Mobile-first base */
+.section {
+  padding: 3rem 6%;
+}
+
+/* Prevent overflow on all devices */
+html, body {
+  overflow-x: hidden;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.section {
+  min-height: 100vh;          /* 100% viewport height */
+  padding: 4rem 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:root {
+  scroll-padding-top: 80px; /* navbar height */
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,27 @@
+.red {
+  /* Base */
+  --bg: #050505;                 /* deep black */
+  --text: #f8fafc;               /* clean white text */
+  --muted-text: #f87171;         /* soft red text */
+
+  /* Cards */
+  --card: #0b0b0b;
+  --border: #3f0a0a;
+
+  /* Primary (Pentest Red) */
+  --primary: #dc2626;            /* blood red */
+  --primary-soft: rgba(220, 38, 38, 0.15);
+
+  /* Section backgrounds */
+  --hero-bg: linear-gradient(135deg, #050505, #120000);
+  --about-bg: #050505;
+  --projects-bg: #050505;
+  --certificates-bg: #050505;
+  --education-bg: #050505;
+  --experience-bg: #050505;
+   --cert-accent: #dc2626;
+  --cert-glow: rgba(220, 38, 38, 0.35);
+
+  /* Effects */
+  --shadow: 0 20px 40px rgba(220, 38, 38, 0.25);
+}

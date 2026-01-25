@@ -1,0 +1,14 @@
+.blue {
+  --bg: #0f172a;
+  --text: #e0f2fe;
+  --card: #1e3a8a;
+  --primary: #60a5fa;
+
+  --hero-bg: linear-gradient(135deg, #0f172a, #1e3a8a);
+  --about-bg: #0f172a;
+  --projects-bg: #0f172a;
+  --certificates-bg: #0f172a;
+  --education-bg: #0f172a;
+   --cert-accent: #60a5fa;
+  --cert-glow: rgba(96, 165, 250, 0.3);
+}

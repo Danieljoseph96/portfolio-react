@@ -1,0 +1,104 @@
+/* Section background follows theme */
+.experience {
+  background: var(--experience-bg, var(--bg));
+}
+
+/* Title */
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+/* Timeline layout */
+.exp-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card */
+.exp-card {
+  position: relative;
+  height: 260px;
+  perspective: 1200px;
+  cursor: pointer;
+  will-change: transform;
+}
+
+/* Front & Back */
+.exp-front,
+.exp-hover {
+  position: absolute;
+  inset: 0;
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border, transparent);
+  box-shadow: var(--shadow);
+  backface-visibility: hidden;
+  transition: transform 0.6s ease, background 0.4s ease;
+}
+
+/* Front side */
+.exp-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.exp-front span {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Back side */
+.exp-hover {
+  transform: rotateY(180deg);
+  font-size: 0.85rem;
+}
+
+.exp-hover ul {
+  padding-left: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.exp-hover li {
+  margin-bottom: 0.3rem;
+}
+
+.tech {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Flip on hover */
+.exp-card:hover .exp-front {
+  transform: rotateY(180deg);
+}
+
+.exp-card:hover .exp-hover {
+  transform: rotateY(360deg);
+}
+
+/* Mobile: disable flip (UX fix) */
+@media (max-width: 768px) {
+  .exp-card {
+    height: auto;
+  }
+
+  .exp-front,
+  .exp-hover {
+    position: relative;
+    transform: none !important;
+  }
+
+  .exp-hover {
+    margin-top: 0.8rem;
+  }
+}
