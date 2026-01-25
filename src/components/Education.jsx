@@ -1,5 +1,9 @@
 // Education.jsx
 import "./Education.css";
+import bcaImage from "../assets/BCA.jpg";
+import mcaImage from "../assets/MCA.jpg";
+import cptImage from "../assets/CPT.jpg";
+import school1Image from "../assets/kuttichal.jpg";
 
 export default function Education() {
   return (
@@ -16,8 +20,8 @@ export default function Education() {
           </div>
 
           <div className="edu-hover">
-            <img src="/MCA.jpg" alt="IGNOU University" />
-            <p>📍 TVM</p>
+            <img src={mcaImage} alt="IGNOU University" />
+            <p>📍 Trivandrum, Kerala</p>
           </div>
         </div>
         {/* Degree 1 */}
@@ -29,22 +33,22 @@ export default function Education() {
           </div>
 
           <div className="edu-hover">
-            <img src="/BCA.jpg" alt="IGNOU University" />
-            <p>📍 TVM</p>
+            <img src={bcaImage} alt="IGNOU University" />
+            <p>📍Trivandrum, Kerala</p>
           </div>
         </div>
 
          {/* Diploma 1 */}
         <div className="edu-card">
           <div className="edu-front">
-            <h3> Computer software Engineer </h3>
+            <h3>Diploma in  Computer Software Engineering </h3>
             <span>2021 – 2024</span>
-            <p> University</p>
+            <p> AICTE</p>
           </div>
 
           <div className="edu-hover">
-          <img src="/CPT.jpg" alt="Cpt TVm"/>
-            <p>📍 CPT </p>
+          <img src={cptImage} alt="Cpt TVm"/>
+            <p>📍Trivandrum, Kerala  </p>
           </div>
         </div>
 
@@ -59,7 +63,7 @@ export default function Education() {
           </div>
 
           <div className="edu-hover">
-            <img src="/school1.jpg" alt="Higher Secondary School" />
+            <img src={school1Image} alt="Higher Secondary School" />
             <p>📍 Trivandrum, Kerala</p>
           </div>
         </div>
@@ -73,8 +77,8 @@ export default function Education() {
           </div>
 
           <div className="edu-hover">
-            <img src="/school2.jpg" alt="Secondary School" />
-            <p>📍 Kollam, Kerala</p>
+            <img src={school1Image} alt="Secondary School" />
+            <p>📍 Trivandrum, Kerala</p>
           </div>
         </div>
       </div>
