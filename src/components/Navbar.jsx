@@ -40,6 +40,7 @@ export default function Navbar({ theme, toggleTheme }) {
   }, []);
 
   const links = [
+    { id: "Blog", label: "Blog" },
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },

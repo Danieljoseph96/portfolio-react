@@ -7,6 +7,8 @@ import Certificates from "./components/Certificates";
 import Home from "./components/Home";
 import Education from "./components/Education";
 import WorkExperience from "./components/WorkExperience";
+import HowTo from "./components/blog/portswing/HowTo";
+import Blog1 from "./components/blog/Tryhackme/Blog1";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -38,6 +40,8 @@ export default function App() {
       <Projects />
 
       <Education/>
+      <HowTo/>
+      <Blog1/>
       
     </div>
   );
