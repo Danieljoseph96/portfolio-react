@@ -119,7 +119,7 @@ export default function Home() {
         }}
       >
         <img src={cehBadge} alt="CEH Certification" />
-        <span>CEH (In Progress)</span>
+        <span>CEH (Complated) practical waitng  </span>
       </motion.div>
     </section>
   );
