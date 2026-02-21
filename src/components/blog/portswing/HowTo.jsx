@@ -107,7 +107,7 @@ export default function HowTo() {
       {tiers.map((tier) => (
         <div key={tier.id}>
           <h2 onClick={() => toggleTier(tier.id)}>{tier.title}</h2>
-          {/* {tier.description && <p className="tier-desc">{tier.description}</p>} */}
+    
 
           {openTier === tier.id &&
             tier.topics.map((topic, index) => (
