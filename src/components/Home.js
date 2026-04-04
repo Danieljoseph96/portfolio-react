@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import WorldMap from "react-svg-worldmap";
 import "./Home.css";
 import cehBadge from "../assets/CEH_2E345519D3F7.png";
@@ -25,6 +25,7 @@ const roles = [
 export default function Home() {
   const leftTicker = useMemo(() => [...roles].sort(() => Math.random() - 0.5), []);
   const rightTicker = useMemo(() => [...badges].sort(() => Math.random() - 0.5), []);
+  const [centerIndex, setCenterIndex] = useState(0);
   const mapData = useMemo(
     () => [
       { country: "in", value: 100 },
@@ -38,27 +39,30 @@ export default function Home() {
     []
   );
 
-  const roleIndex = 0;
-  const badgeIndex = 0;
+  useEffect(() => {
+    const centerTimer = window.setInterval(() => {
+      setCenterIndex((prev) => (centerItems.length ? (prev + 1) % centerItems.length : 0));
+    }, 1900);
+    return () => {
+      window.clearInterval(centerTimer);
+    };
+  }, []);
 
-  const nonIndiaOpacity = 0.08;
+  const centerItems = useMemo(() => {
+    const roleItems = leftTicker.map((role) => `${role.icon} ${role.label}`);
+    const badgeItems = rightTicker.map((badge) => badge);
+    return [...roleItems, ...badgeItems].slice(0, 30);
+  }, [leftTicker, rightTicker]);
+
+  const nonIndiaOpacity = 0.02;
 
   return (
     <section id="home" className="hero">
       <div className="hero-canvas" aria-hidden="true">
         <div className="map-viewport">
-          <div className="canvas-scroller left" aria-hidden="true">
-            <div className="canvas-track single">
-              <span key={`role-${roleIndex}`} className="canvas-chip role-chip">
-                <span className="role-icon">{leftTicker[roleIndex]?.icon}</span>
-                <span>{leftTicker[roleIndex]?.label}</span>
-              </span>
-            </div>
-          </div>
-
           <div className="map-image">
             <WorldMap
-              color="#22c55e"
+              color="#38bdf8"
               backgroundColor="transparent"
               valueSuffix="focus"
               size="responsive"
@@ -66,9 +70,9 @@ export default function Home() {
               styleFunction={(context) => {
                 const isIndia = context.countryCode === "IN";
                 return {
-                  fill: isIndia ? "#18eaf1" : "#22c55e",
+                  fill: isIndia ? "#16def9" : "#38bdf8",
                   fillOpacity: isIndia ? 1 : nonIndiaOpacity,
-                  stroke: isIndia ? "#0f5ceb" : "#0f172a",
+                  stroke: isIndia ? "#fdba74" : "#0f172a",
                   strokeWidth: isIndia ? 1.7 : 0.6,
                   transition: "all 0.25s ease",
                 };
@@ -76,10 +80,21 @@ export default function Home() {
             />
           </div>
 
-          <div className="canvas-scroller right" aria-hidden="true">
-            <div className="canvas-track single">
-              <span key={`badge-${badgeIndex}`} className="canvas-chip badge-chip">{rightTicker[badgeIndex]}</span>
-            </div>
+          <div className="center-scroller" aria-hidden="true">
+            <span key={`center-${centerIndex}`} className="center-chip">
+              {centerItems[centerIndex]}
+            </span>
+          </div>
+
+          <div className="canvas-fx" aria-hidden="true">
+            <div className="fx-ring" />
+            <div className="fx-ring fx-ring-delay" />
+            <div className="fx-scanline" />
+          </div>
+
+          <div className="ceh-box" aria-hidden="true">
+            <img src={cehBadge} alt="CEH Certification" />
+            <span>CEH completed • Practical in progress</span>
           </div>
 
         
@@ -98,12 +113,6 @@ export default function Home() {
 
      
    
-
-      {/* CEH Badge */}
-      <div className="ceh-box">
-        <img src={cehBadge} alt="CEH Certification" />
-        <span>CEH completed • Practical in progress</span>
-      </div>
     </section>
   );
 }
