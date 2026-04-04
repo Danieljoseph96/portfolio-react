@@ -2,26 +2,87 @@
 .loader-container {
   position: fixed;
   inset: 0;
-  background: #0f172a;
+  background: radial-gradient(circle at 20% 10%, #04101b, #020617 60%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #d5f6ff;
   z-index: 9999;
+  overflow: hidden;
 }
 
-.spinner {
-  width: 60px;
-  height: 60px;
+.scan-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.4;
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.8);
+  animation: scan 2.1s linear infinite;
+}
+
+.loader-terminal {
+  width: min(600px, 90vw);
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: rgba(2, 6, 23, 0.75);
+  box-shadow: 0 20px 45px rgba(2, 6, 23, 0.65);
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.loader-terminal p {
+  margin: 0.35rem 0;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.loader-terminal .done {
+  color: #22c55e;
+}
+
+.loader-dots {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.loader-dots span {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  border: 5px solid #334155;
-  border-top-color: #38bdf8;
-  animation: spinBounce 1s ease-in-out infinite;
+  background: #38bdf8;
+  animation: blink 1s infinite ease-in-out;
 }
 
-@keyframes spinBounce {
-  0%   { transform: rotate(0deg); }
-  50%  { transform: rotate(180deg) scale(1.15); }
-  100% { transform: rotate(360deg); }
+.loader-dots span:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.loader-dots span:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
 }

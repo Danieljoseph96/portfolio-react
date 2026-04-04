@@ -3,7 +3,7 @@ import "./Certificates.css";
 export default function Certificates() {
   return (
     <section id="certificates" className="certificates section">
-      <h2>Certificates</h2>
+      <h2 className="section-heading">Certificates</h2>
 
       <div className="cert-grid">
         {/* Advent of Cyber 2025 */}

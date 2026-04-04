@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import { FaMoon, FaSun, FaPalette, FaBars, FaTimes } from "react-icons/fa";
+import { FaTint, FaBolt, FaBars, FaTimes } from "react-icons/fa";
 import logoSvg from "../assets/logo.svg";
 
 export default function Navbar({ theme, toggleTheme }) {
@@ -8,9 +8,8 @@ export default function Navbar({ theme, toggleTheme }) {
   const [active, setActive] = useState("about");
 
   const getIcon = () => {
-    if (theme === "light") return <FaMoon />;
-    if (theme === "dark") return <FaSun />;
-    return <FaPalette />;
+    if (theme === "blue") return <FaTint />;
+    return <FaBolt />;
   };
 
   /* Close menu on scroll */
@@ -40,7 +39,7 @@ export default function Navbar({ theme, toggleTheme }) {
   }, []);
 
   const links = [
-    { id: "Blog", label: "Blog" },
+    { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },

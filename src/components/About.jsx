@@ -13,6 +13,7 @@ export default function About() {
   return (
     <section id="about" className="about section">
       <motion.h2
+        className="section-heading"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >

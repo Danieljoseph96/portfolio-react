@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useMemo } from "react";
+import WorldMap from "react-svg-worldmap";
 import "./Home.css";
 import cehBadge from "../assets/CEH_2E345519D3F7.png";
 
@@ -11,116 +12,98 @@ const badges = [
   "🧠 Blue Team",
   "💻 Bash"
 ];
-
-/* Animations */
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20, scale: 0.95 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { type: "spring", stiffness: 80, damping: 14 }
-  }
-};
+const roles = [
+  { icon: "🛡️", label: "Computer Security Enthusiast" },
+  { icon: "🎯", label: "TryHackMe Student" },
+  { icon: "🧰", label: "Technical Assistant at TryHackMe" },
+  { icon: "🕵️", label: "Investigation-Driven Security Learner" },
+  { icon: "🔐", label: "Web Security Learner" },
+  { icon: "🌐", label: "Web Developer" },
+  { icon: "🐍", label: "Python Programmer" },
+];
 
 export default function Home() {
+  const leftTicker = useMemo(() => [...roles].sort(() => Math.random() - 0.5), []);
+  const rightTicker = useMemo(() => [...badges].sort(() => Math.random() - 0.5), []);
+  const mapData = useMemo(
+    () => [
+      { country: "in", value: 100 },
+      { country: "us", value: 62 },
+      { country: "gb", value: 45 },
+      { country: "de", value: 37 },
+      { country: "sg", value: 55 },
+      { country: "au", value: 34 },
+      { country: "jp", value: 48 },
+    ],
+    []
+  );
+
+  const roleIndex = 0;
+  const badgeIndex = 0;
+
+  const nonIndiaOpacity = 0.08;
+
   return (
-    <section className="hero">
+    <section id="home" className="hero">
+      <div className="hero-canvas" aria-hidden="true">
+        <div className="map-viewport">
+          <div className="canvas-scroller left" aria-hidden="true">
+            <div className="canvas-track single">
+              <span key={`role-${roleIndex}`} className="canvas-chip role-chip">
+                <span className="role-icon">{leftTicker[roleIndex]?.icon}</span>
+                <span>{leftTicker[roleIndex]?.label}</span>
+              </span>
+            </div>
+          </div>
+
+          <div className="map-image">
+            <WorldMap
+              color="#22c55e"
+              backgroundColor="transparent"
+              valueSuffix="focus"
+              size="responsive"
+              data={mapData}
+              styleFunction={(context) => {
+                const isIndia = context.countryCode === "IN";
+                return {
+                  fill: isIndia ? "#18eaf1" : "#22c55e",
+                  fillOpacity: isIndia ? 1 : nonIndiaOpacity,
+                  stroke: isIndia ? "#0f5ceb" : "#0f172a",
+                  strokeWidth: isIndia ? 1.7 : 0.6,
+                  transition: "all 0.25s ease",
+                };
+              }}
+            />
+          </div>
+
+          <div className="canvas-scroller right" aria-hidden="true">
+            <div className="canvas-track single">
+              <span key={`badge-${badgeIndex}`} className="canvas-chip badge-chip">{rightTicker[badgeIndex]}</span>
+            </div>
+          </div>
+
+        
+        </div>
+      </div>
       {/* Floating background glow */}
       <div className="hero-glow" />
 
       {/* Intro */}
-      <motion.h1
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 70 }}
-      >
+      <h1>
         Hi, I’m <span>Daniel Joseph M L</span> 👨‍💻
-      </motion.h1>
+      </h1>
 
       {/* Animated underline */}
-      <motion.div
-        className="underline"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-      />
+      <div className="underline" />
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-      >
-        TryHackMe Student • Technical Assistant • Cybersecurity Enthusiast
-      </motion.p>
-
-      {/* Skill badges */}
-      <motion.div
-        className="badges"
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
-        {badges.map((b, i) => (
-          <motion.span
-            key={i}
-            className="badge"
-            variants={item}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {b}
-          </motion.span>
-        ))}
-      </motion.div>
-
-      {/* TryHackMe badge */}
-      <motion.div
-        className="iframe-box"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-        whileHover={{
-          scale: 1.03,
-          boxShadow: "0 25px 55px rgba(0,0,0,0.45)"
-        }}
-      >
-        <iframe
-          src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1774383"
-          title="TryHackMe Profile"
-          loading="lazy"
-        />
-      </motion.div>
+     
+   
 
       {/* CEH Badge */}
-      <motion.div
-        className="ceh-box"
-        initial={{ opacity: 0, scale: 0.85 }}
-        animate={{
-          opacity: 1,
-          scale: 1,
-          y: [0, -6, 0]
-        }}
-        transition={{
-          delay: 0.9,
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
+      <div className="ceh-box">
         <img src={cehBadge} alt="CEH Certification" />
-        <span>CEH (Complated) practical waitng  </span>
-      </motion.div>
+        <span>CEH completed • Practical in progress</span>
+      </div>
     </section>
   );
 }

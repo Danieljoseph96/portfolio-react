@@ -8,7 +8,7 @@ import school1Image from "../assets/kuttichal.jpg";
 export default function Education() {
   return (
     <section id="education" className="education section">
-      <h2>Education & Qualification</h2>
+      <h2 className="section-heading">Education & Qualification</h2>
 
       <div className="edu-timeline">
          {/* Master Degree 1 */}

@@ -41,79 +41,31 @@ export default function Projects() {
       tech: "React, TMDB API",
       description: "Movie database app using TMDB API",
       images: [pro8_1, pro8_2, pro8_3, pro8_4],
-      github: "https://github.com/Danieljoseph96/tmdb.git",
+      github: "https://agent-69ba5adde7de0839ccf3beae--danyml.netlify.app/",
   
     },
   ];
 
-  const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
-  const [filter, setFilter] = useState("all");
-
-  // Get unique tech stacks for filter
-  const techStacks = ["all", ...new Set(projects.map(p => p.tech))];
-
-  const filteredProjects = filter === "all" 
-    ? projects 
-    : projects.filter(p => p.tech === filter);
-
   return (
     <section id="projects" className="projects section">
       <div className="projects-header">
-        <h2>My Projects</h2>
-        
-        <div className="projects-controls">
-          {/* Tech Filter */}
-          <select 
-            value={filter} 
-            onChange={(e) => setFilter(e.target.value)}
-            className="filter-select"
-          >
-            {techStacks.map(tech => (
-              <option key={tech} value={tech}>
-                {tech === "all" ? "All Technologies" : tech}
-              </option>
-            ))}
-          </select>
-
-          {/* View Toggle */}
-          <div className="view-toggle">
-            <button 
-              className={viewMode === "grid" ? "active" : ""}
-              onClick={() => setViewMode("grid")}
-              aria-label="Grid view"
-            >
-              ⊞ Grid
-            </button>
-            <button 
-              className={viewMode === "list" ? "active" : ""}
-              onClick={() => setViewMode("list")}
-              aria-label="List view"
-            >
-              ≡ List
-            </button>
-          </div>
-        </div>
+        <h2 className="section-heading">Projects</h2>
       </div>
 
-      <div className={`projects-${viewMode}`}>
-        {filteredProjects.map((project, index) => (
+      <div className="projects-grid">
+        {projects.map((project, index) => (
           <ProjectCard 
             key={index} 
             project={project} 
-            viewMode={viewMode}
           />
         ))}
       </div>
-
-      {filteredProjects.length === 0 && (
-        <p className="no-projects">No projects found for this filter.</p>
-      )}
     </section>
   );
 }
 
 /* Enhanced Card Component */
-function ProjectCard({ project, viewMode }) {
+function ProjectCard({ project }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -143,7 +95,7 @@ function ProjectCard({ project, viewMode }) {
 
   return (
     <div 
-      className={`project-card ${viewMode}`}
+      className="project-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -196,9 +148,7 @@ function ProjectCard({ project, viewMode }) {
       <div className="project-content">
         <h3>{project.title}</h3>
         <p className="project-tech">{project.tech}</p>
-        {viewMode === "list" && (
-          <p className="project-description">{project.description}</p>
-        )}
+        <p className="project-description">{project.description}</p>
         
         <div className="project-links">
           {project.github && (

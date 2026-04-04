@@ -4,9 +4,8 @@ import './index.css';
 import App from './App';
 
 import './themes/global.css';
-import './themes/light.css';
-import './themes/dark.css';
 import './themes/blue.css';
+import './themes/red.css';
 
 import reportWebVitals from './reportWebVitals';
 

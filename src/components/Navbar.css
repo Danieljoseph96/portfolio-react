@@ -14,7 +14,9 @@
   background: var(--bg);
   color: var(--text);
 
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.22);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
   transition: background 0.35s ease, color 0.25s ease;
 }
 
@@ -31,9 +33,10 @@
 }
 
 .navbar h2 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--primary);
+  letter-spacing: 0.03em;
 }
 
 /* ================= NAV LINKS ================= */
@@ -50,7 +53,8 @@
   color: inherit;
   text-decoration: none;
   font-weight: 500;
-  opacity: 0.9;
+  font-size: 0.95rem;
+  opacity: 0.92;
 }
 
 .navbar a::after {
@@ -76,16 +80,20 @@
 /* ================= THEME BUTTON ================= */
 
 .theme-btn {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
+  background: rgba(2, 6, 23, 0.25);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
   color: var(--primary);
   cursor: pointer;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .theme-btn:hover {
-  transform: rotate(20deg) scale(1.1);
+  transform: translateY(-1px);
+  background: var(--primary-soft);
 }
 
 /* ================= MOBILE ================= */
@@ -115,6 +123,7 @@
     padding: 2rem 0;
     transform: translateY(-120%);
     transition: transform 0.35s ease;
+    border-bottom: 1px solid var(--border);
   }
 
   .nav-links.open {

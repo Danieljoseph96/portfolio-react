@@ -5,7 +5,7 @@ export default function WorkExperience() {
   return (
     <section id="experience" className="experience section">
       <motion.h2
-        className="section-title"
+        className="section-heading"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

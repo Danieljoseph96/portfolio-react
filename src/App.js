@@ -7,18 +7,14 @@ import Certificates from "./components/Certificates";
 import Home from "./components/Home";
 import Education from "./components/Education";
 import WorkExperience from "./components/WorkExperience";
-import HowTo from "./components/blog/portswing/HowTo";
-import Blog1 from "./components/blog/Tryhackme/Blog1";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("blue");
 
- const toggleTheme = () => {
-  setTheme(prev =>
-    prev === "light" ? "blue" : prev === "blue" ? "red" : "light"
-  );
-};
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "blue" ? "red" : "blue"));
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
@@ -40,8 +36,6 @@ export default function App() {
       <Projects />
 
       <Education/>
-      <HowTo/>
-      <Blog1/>
       
     </div>
   );

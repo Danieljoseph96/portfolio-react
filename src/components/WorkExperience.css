@@ -1,32 +1,61 @@
 /* Section background follows theme */
 .experience {
   background: var(--experience-bg, var(--bg));
+  padding: 5rem 2rem;
+  position: relative;
 }
 
-/* Title */
-.section-title {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  margin-bottom: 2rem;
-  color: var(--primary);
+.experience::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
 /* Timeline layout */
 .exp-timeline {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.6rem;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .exp-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .exp-timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Card */
 .exp-card {
   position: relative;
-  height: 260px;
+  height: 280px;
   perspective: 1200px;
   cursor: pointer;
   will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .exp-card {
+    height: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .exp-card {
+    height: 320px;
+  }
 }
 
 /* Front & Back */
