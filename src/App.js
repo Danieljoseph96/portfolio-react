@@ -29,12 +29,12 @@ import "./App.css";
 const focusAreas = [
   {
     title: "AI Security",
-    text: "LLM protection, adversarial testing, model lifecycle risk, and secure AI workflows.",
+    text: "LLM protection, adversarial testing, model lifecycle risk management, and secure AI workflows.",
     Icon: FaBrain,
   },
   {
     title: "Application Security",
-    text: "API security, OWASP testing, input validation, access control, and data leakage prevention.",
+    text: "API security, OWASP-based testing, input validation, access control, and data leakage prevention.",
     Icon: FaUserShield,
   },
   {
@@ -44,7 +44,7 @@ const focusAreas = [
   },
   {
     title: "IoT + Cloud Defense",
-    text: "Embedded systems hardening, cloud security monitoring, deployment safety, and incident response.",
+    text: "Embedded systems hardening, cloud security monitoring, safe deployments, and incident response.",
     Icon: FaNetworkWired,
   },
 ];
@@ -142,11 +142,11 @@ const projects = [
     title: "Church Meeting & Event Management Platform",
     stack:
       "Python, Django, Django REST Framework, React.js, JavaScript, SQL, REST API, Git, GitHub, Postman",
-    text: "Full-stack centralized platform for managing church meetings, events, participant registration, accommodation, transportation, and administration workflows.",
+    text: "A centralized full-stack platform for managing church meetings, events, participant registration, accommodation, transportation, and administrative workflows.",
     features: [
       "Meeting and event scheduling",
       "Accommodation and room capacity management",
-      "Transportation routes and pickup/drop requirements",
+      "Transportation routes and pickup and drop-off requirements",
       "Online registration and participant management",
       "Role-based access control",
       "Location APIs for country, state, city, and locality data",
@@ -159,45 +159,45 @@ const projects = [
   {
     title: "Smart Egg Incubator",
     stack: "ESP32, Arduino, C++, DHT22, Relay Modules",
-    text: "Secure IoT automation system with real-time monitoring, automated temperature and humidity control, remote access, safety logic, and input validation.",
+    text: "A secure IoT automation system with real-time monitoring, automated temperature and humidity control, remote access, safety logic, and input validation.",
     Icon: FaNetworkWired,
   },
   {
     title: "IoT Room Automation",
     stack: "ESP8266, Sensors, Relay Modules, Android Phone",
-    text: "Room automation system for controlling connected appliances through relay modules, sensor-based monitoring, and Android phone connectivity over Wi-Fi.",
+    text: "A room automation system for controlling connected appliances through relay modules, sensor-based monitoring, and Android phone connectivity over Wi-Fi.",
     Icon: FaNetworkWired,
   },
   {
     title: "Web Application Vulnerability Scanner",
     stack: "Python, Django, Nmap, SQLite",
-    text: "Scanner for network and service discovery with encrypted scan storage, secure authentication, and role-based access.",
+    text: "A scanner for network and service discovery with encrypted scan storage, secure authentication, and role-based access.",
     Icon: FaBug,
   },
   {
     title: "Local AI Image Generation Pipeline",
     stack: "Python, Stable Diffusion, CUDA, img2img",
-    text: "Offline GPU-accelerated image generation pipeline with a self-refine fallback for graceful dependency handling.",
+    text: "An offline, GPU-accelerated image generation pipeline with a self-refinement fallback for graceful dependency handling.",
     Icon: FaRobot,
   },
   {
     title: "AI / LLM Security Testing Toolkit",
     stack: "Python, OWASP LLM Top 10, Prompt Injection Testing",
-    text: "Toolkit for testing LLM applications against prompt injection, jailbreak attempts, sensitive data leakage, and unsafe output handling.",
+    text: "A toolkit for testing LLM applications against prompt injection, jailbreak attempts, sensitive data leakage, and unsafe output handling.",
     Icon: FaShieldAlt,
   },
   {
     title: "DevSecOps CI/CD Security Pipeline",
     stack: "Docker, Kubernetes, Jenkins, OWASP ZAP, Trivy",
-    text: "Containerized Django deployment with automated security gates, ZAP baseline scans, and Trivy image scanning.",
+    text: "A containerized Django deployment with automated security gates, ZAP baseline scans, and Trivy image scanning.",
     Icon: FaServer,
   },
 ];
 
 const achievements = [
   "TryHackMe - Ranked in the top 1% of learners globally",
-  "Responsible disclosure of exposed RDP service and weak security configuration affecting a government domain",
-  "9+ years total IT experience with 3+ years focused on cybersecurity, application security, AI/ML technologies, and Python development",
+  "Responsible disclosure of an exposed RDP service and a weak security configuration affecting a government domain",
+  "9+ years of total IT experience, including 3+ years focused on cybersecurity, application security, AI/ML technologies, and Python development",
 ];
 
 const education = [
@@ -231,8 +231,8 @@ export default function App() {
           </p>
           <h1>Daniel Joseph M L</h1>
           <p className="hero-subtitle">
-            AI Security Engineer, ML Security Engineer, Application Security
-            specialist, and Python Developer focused on secure AI/ML systems,
+            An AI Security Engineer, ML Security Engineer, Application Security
+            specialist, and Python developer focused on secure AI/ML systems,
             LLM protection, and hybrid cybersecurity solutions.
           </p>
           <div className="hero-actions">
@@ -268,7 +268,7 @@ export default function App() {
           <div className="profile-icon">
             <FaShieldAlt />
           </div>
-          <h2>Secure AI, web apps, APIs, and connected systems.</h2>
+          <h2>Securing AI, web apps, APIs, and connected systems.</h2>
           <p>
             9+ years in IT with 3+ years focused on cybersecurity,
             application security, AI/ML tooling, Python development, IoT, and
@@ -330,15 +330,15 @@ export default function App() {
             <div className="play-mark">
               <FaPlayCircle />
             </div>
-            <p className="media-label">Video Position Marked</p>
+            <p className="media-label">Video Placeholder</p>
             <h3>Personal Introduction Video</h3>
             <p>
-              A dedicated space for a future video explaining profile,
-              experience, skills, projects, and AI/security work.
+              A dedicated space for a future video introducing my profile,
+              experience, skills, projects, and AI security work.
             </p>
           </div>
           <div className="media-note">
-            <h3>Cover Photo Ready</h3>
+            <h3>Cover Photo Area Ready</h3>
             <p>
               The hero profile panel now has a marked cover photo area for a
               future professional image or project banner.
