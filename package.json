@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "craco start",
+    "dev": "craco start",
     "build": "set \"GENERATE_SOURCEMAP=false\" && craco build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
